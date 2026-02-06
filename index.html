@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel | Desarrollador & Automatizador</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Particles background -->
+  <div id="particles-bg"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Daniel<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Inicio</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        DISPONIBLE PARA PROYECTOS
+      </div>
+      <h1 class="hero-title">
+        Transformo procesos<br>
+        en <span class="gradient-text">Soluciones Inteligentes</span>
+      </h1>
+      <p class="hero-subtitle">
+        Desarrollador especializado en automatización, herramientas internas y 
+        experiencias digitales que eliminan la fricción del trabajo diario.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Ver Proyectos
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-envelope"></i> Contactar
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Años experiencia</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Proyectos entregados</span>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="90">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Automatización</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>EXPLORAR</span>
+      <div class="scroll-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-user"></i> SOBRE MÍ</span>
+        <h2 class="section-title">Construyo herramientas que <span class="gradient-text">la gente quiere usar</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy un desarrollador apasionado por crear soluciones que simplifican procesos complejos. 
+            Mi enfoque combina <strong>desarrollo técnico</strong> con <strong>diseño centrado en el usuario</strong> 
+            para construir herramientas que realmente hacen la diferencia.
+          </p>
+          <p>
+            Creo firmemente que la tecnología debe adaptarse a las personas, no al revés. 
+            Por eso cada proyecto que desarrollo prioriza la experiencia del usuario 
+            y la eliminación de fricciones innecesarias.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>Automatización</h4>
+                <p>Elimino tareas repetitivas con scripts y sistemas inteligentes</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-palette"></i></div>
+              <div>
+                <h4>UX-First</h4>
+                <p>Interfaces intuitivas que los usuarios adoptan sin resistencia</p>
+              </div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon"><i class="fas fa-code-branch"></i></div>
+              <div>
+                <h4>Full-Stack</h4>
+                <p>Desde el backend hasta el frontend, domino todo el stack</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-terminal">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title">daniel@portfolio ~ %</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">cat perfil.json</span>
+              </div>
+              <div class="terminal-output">
+<pre>{
+  "nombre": "Daniel",
+  "rol": "Desarrollador Full-Stack",
+  "especialidad": [
+    "Automatización",
+    "Herramientas internas",
+    "Apps Script & GCP"
+  ],
+  "pasion": "Eliminar burocracia manual",
+  "estado": "<span class="neon-green">Disponible</span>"
+}</pre>
+              </div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-folder-open"></i> PORTAFOLIO</span>
+        <h2 class="section-title">Proyectos que <span class="gradient-text">resuelven problemas reales</span></h2>
+        <p class="section-desc">Cada proyecto nace de una necesidad real. Estas son las soluciones que he diseñado y desarrollado.</p>
+      </div>
+
+      <!-- Project 1: DevHub -->
+      <div class="project-showcase" data-aos="fade-up">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag tag-core"><i class="fas fa-star"></i> SOLUCIÓN CORE</span>
+          </div>
+          <h3 class="project-title">DevHub: La "Libreta" Inteligente</h3>
+          <p class="project-desc">
+            Un espacio personal donde el desarrollador centraliza su día a día. 
+            Notas, tareas, links y contexto del proyecto.
+          </p>
+          <ul class="project-features">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Handoff sin fricción</strong>
+                <span>Contexto completo para vacaciones o cambios de equipo</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Todo en un lugar</strong>
+                <span>Elimina la búsqueda de links y datos perdidos</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Input natural</strong>
+                <span>Escribe como ya lo haces, el sistema estructura la data</span>
+              </div>
+            </li>
+          </ul>
+          <div class="project-tech">
+            <span>Google Apps Script</span>
+            <span>Google Sheets</span>
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-window">
+            <div class="preview-header">
+              <div class="preview-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="preview-title"><i class="fas fa-code"></i> DevHub - Workspace</span>
+              <span class="preview-badge online"><i class="fas fa-circle"></i> Online</span>
+            </div>
+            <div class="preview-body devhub-preview">
+              <div class="devhub-project-bar">
+                <div class="project-label">PROYECTO ACTIVO</div>
+                <div class="project-name">MLOANSPRES-7961</div>
+                <div class="project-meta">
+                  <span class="tag-sm tag-aso">ASO</span>
+                  <span class="tag-sm tag-prod">Producción</span>
+                </div>
+                <div class="project-details">
+                  <span><i class="fas fa-calendar"></i> Inicio: 15 Ene 2026</span>
+                  <span><i class="fas fa-user"></i> Tech Lead: Joe Valentin</span>
+                </div>
+              </div>
+              <div class="devhub-columns">
+                <div class="devhub-col">
+                  <div class="col-header"><i class="fas fa-sticky-note"></i> Notas Rápidas <span class="count">12</span></div>
+                  <div class="note-item">
+                    <i class="fas fa-server"></i> Endpoint GET /score-reactivo
+                  </div>
+                  <div class="note-item">
+                    <i class="fas fa-database"></i> DB: oracle-prod-01
+                  </div>
+                  <div class="note-item">
+                    <i class="fas fa-check"></i> Pruebas completadas ✓
+                  </div>
+                </div>
+                <div class="devhub-col">
+                  <div class="col-header"><i class="fas fa-link"></i> Links Frecuentes <span class="count">8</span></div>
+                  <div class="link-item">
+                    <i class="fas fa-terminal"></i> Consola Ether <i class="fas fa-external-link-alt"></i>
+                  </div>
+                  <div class="link-item">
+                    <i class="fas fa-cog"></i> Gestión BD <i class="fas fa-external-link-alt"></i>
+                  </div>
+                  <div class="link-item">
+                    <i class="fas fa-file-alt"></i> Docs Técnicas <i class="fas fa-external-link-alt"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="devhub-footer">
+                <span><i class="fas fa-clock"></i> Última edición: Hace 5 min</span>
+                <span><i class="fas fa-save"></i> Auto-guardado</span>
+                <button class="btn-new-note"><i class="fas fa-plus"></i> Nueva Nota</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: LinkHub -->
+      <div class="project-showcase reverse" data-aos="fade-up">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag tag-feature"><i class="fas fa-brain"></i> CEREBRO COMPARTIDO</span>
+          </div>
+          <h3 class="project-title">LinkHub</h3>
+          <p class="project-desc">
+            ¿Dónde estaba el link de la consola? ¿Cuál es la url de test? 
+            LinkHub centraliza y etiqueta todos los recursos dispersos.
+          </p>
+          <ul class="project-features">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Búsqueda por etiquetas</strong>
+                <span>ASO, APX y más categorías personalizables</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Favoritos y más usados</strong>
+                <span>Acceso rápido a tus recursos frecuentes</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Compartido por equipo</strong>
+                <span>Un solo lugar de verdad para todo el equipo</span>
+              </div>
+            </li>
+          </ul>
+          <div class="project-tech">
+            <span>Apps Script</span>
+            <span>Sheets API</span>
+            <span>Web App</span>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-window">
+            <div class="preview-header">
+              <div class="preview-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="preview-title"><i class="fas fa-link"></i> LinkHub</span>
+            </div>
+            <div class="preview-body linkhub-preview">
+              <div class="linkhub-search">
+                <i class="fas fa-search"></i>
+                <span>Buscar recurso...</span>
+              </div>
+              <div class="linkhub-tags">
+                <span class="lh-tag active">ASO</span>
+                <span class="lh-tag">APX</span>
+                <span class="lh-tag">Diseño</span>
+                <span class="lh-tag">DevOps</span>
+                <span class="lh-tag">QA</span>
+              </div>
+              <div class="linkhub-items">
+                <div class="lh-item">
+                  <div class="lh-item-icon"><i class="fas fa-terminal"></i></div>
+                  <div class="lh-item-info">
+                    <span class="lh-item-name">Consola Ether</span>
+                    <span class="lh-item-desc">Acceso y despliegue de componentes...</span>
+                  </div>
+                  <div class="lh-item-dots">
+                    <span class="dot-indicator green"></span>
+                    <span class="dot-indicator yellow"></span>
+                  </div>
+                </div>
+                <div class="lh-item">
+                  <div class="lh-item-icon"><i class="fas fa-database"></i></div>
+                  <div class="lh-item-info">
+                    <span class="lh-item-name">Gestión Credenciales</span>
+                    <span class="lh-item-desc">Solicitud bases de datos...</span>
+                  </div>
+                  <div class="lh-item-dots">
+                    <span class="dot-indicator blue"></span>
+                  </div>
+                </div>
+                <div class="lh-item">
+                  <div class="lh-item-icon"><i class="fas fa-book"></i></div>
+                  <div class="lh-item-info">
+                    <span class="lh-item-name">Wiki Técnica</span>
+                    <span class="lh-item-desc">Documentación del equipo...</span>
+                  </div>
+                  <div class="lh-item-dots">
+                    <span class="dot-indicator purple"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="linkhub-footer">
+                <span><i class="fas fa-search"></i> Búsqueda por etiquetas</span>
+                <span><i class="fas fa-star"></i> Favoritos y más usados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Automatización DPR -->
+      <div class="project-showcase" data-aos="fade-up">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag tag-auto"><i class="fas fa-robot"></i> AUTOMATIZACIÓN</span>
+          </div>
+          <h3 class="project-title">Automatización DPR & Estructura</h3>
+          <p class="project-desc">
+            El sistema extrae la información que el desarrollador ya ingresó en el DevHub 
+            y solicita el código CRQ automáticamente. Genera carpetas y archivos de documentación 
+            en segundos.
+          </p>
+          <ul class="project-features">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Escribe una vez, usa en todos lados</strong>
+                <span>Se eliminan los errores de copia y pega</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Estructura estandarizada</strong>
+                <span>Carpetas y plantillas pre-configuradas</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Cumplimiento normativo</strong>
+                <span>Generado automáticamente en 2.3 segundos</span>
+              </div>
+            </li>
+          </ul>
+          <div class="project-tech">
+            <span>Google Drive API</span>
+            <span>Apps Script</span>
+            <span>Automation</span>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-window">
+            <div class="preview-header">
+              <div class="preview-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="preview-title"><i class="fas fa-folder-tree"></i> Estructura Generada</span>
+            </div>
+            <div class="preview-body folder-preview">
+              <div class="folder-tree">
+                <div class="tree-item root">
+                  <i class="fas fa-folder folder-icon"></i>
+                  <span class="folder-name">PROYECTO_CRQ000101420895/</span>
+                </div>
+                <div class="tree-item level-1">
+                  <i class="fas fa-folder folder-icon blue"></i>
+                  <span>01_Información_General/</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-alt file-icon"></i>
+                  <span>datos_proyecto.md</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-alt file-icon"></i>
+                  <span>equipo_responsable.md</span>
+                </div>
+                <div class="tree-item level-1">
+                  <i class="fas fa-folder folder-icon green"></i>
+                  <span>02_Validaciones_Técnicas/</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-excel file-icon"></i>
+                  <span>checklist_c204.xlsx</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-alt file-icon"></i>
+                  <span>pruebas_unitarias.md</span>
+                </div>
+                <div class="tree-item level-1">
+                  <i class="fas fa-folder folder-icon yellow"></i>
+                  <span>03_Autorizaciones/</span>
+                </div>
+                <div class="tree-item level-1">
+                  <i class="fas fa-folder folder-icon purple"></i>
+                  <span>04_Despliegue/</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-code file-icon"></i>
+                  <span>scripts/</span>
+                </div>
+                <div class="tree-item level-2">
+                  <i class="fas fa-file-alt file-icon"></i>
+                  <span>rollback_plan.md</span>
+                </div>
+              </div>
+              <div class="folder-footer">
+                <span class="gen-time"><i class="fas fa-bolt"></i> Generado en 2.3s</span>
+                <span class="gen-files"><i class="fas fa-check"></i> 12 archivos creados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Deployment Tool -->
+      <div class="project-showcase reverse" data-aos="fade-up">
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag tag-wizard"><i class="fas fa-magic"></i> WIZARD INTELIGENTE</span>
+          </div>
+          <h3 class="project-title">Deployment Tool & Guía UX</h3>
+          <p class="project-desc">
+            Una herramienta intermedia amigable que reutiliza datos del DevHub 
+            y guía al usuario para llenar solo lo faltante.
+          </p>
+          <ul class="project-features">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Flujo Automático de Datos</strong>
+                <span>Lee datos del DevHub, auto-completa campos conocidos</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Validación Automática</strong>
+                <span>Verifica fechas, nombres, IDs y formato antes de enviar</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Genera C204 y Docs</strong>
+                <span>Exporta automáticamente los formatos requeridos</span>
+              </div>
+            </li>
+          </ul>
+          <div class="project-tech">
+            <span>Apps Script</span>
+            <span>UX Design</span>
+            <span>Validation Engine</span>
+          </div>
+        </div>
+        <div class="project-preview">
+          <div class="preview-window">
+            <div class="preview-header">
+              <div class="preview-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="preview-title"><i class="fas fa-rocket"></i> Asistente de Despliegue</span>
+              <span class="preview-badge validated"><i class="fas fa-shield-alt"></i> Validado</span>
+            </div>
+            <div class="preview-body wizard-preview">
+              <div class="wizard-header-bar">
+                <div class="wizard-title">
+                  <i class="fas fa-clipboard-check"></i>
+                  Checklist de Validación Técnica C204
+                </div>
+                <div class="wizard-progress-circle">
+                  <span class="progress-number">90%</span>
+                </div>
+              </div>
+              <div class="wizard-progress-bar">
+                <div class="progress-label">Progreso General</div>
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 90%"></div>
+                </div>
+                <div class="progress-meta">9 de 10 completados</div>
+              </div>
+              <div class="wizard-steps">
+                <div class="wizard-step completed">
+                  <div class="step-icon"><i class="fas fa-check"></i></div>
+                  <div class="step-info">
+                    <span class="step-name">1. Información General</span>
+                    <span class="step-status auto">✓ Auto-completado desde DevHub</span>
+                  </div>
+                  <i class="fas fa-check-circle step-check"></i>
+                </div>
+                <div class="wizard-step completed">
+                  <div class="step-icon"><i class="fas fa-check"></i></div>
+                  <div class="step-info">
+                    <span class="step-name">2. Validaciones Técnicas</span>
+                    <span class="step-status auto">Validado automáticamente</span>
+                  </div>
+                  <i class="fas fa-check-circle step-check"></i>
+                </div>
+                <div class="wizard-step pending">
+                  <div class="step-icon"><i class="fas fa-signature"></i></div>
+                  <div class="step-info">
+                    <span class="step-name">4. Autorizaciones</span>
+                    <span class="step-status manual">Requiere completar firmas</span>
+                  </div>
+                  <button class="btn-complete">Completar</button>
+                </div>
+              </div>
+              <div class="wizard-footer">
+                <div class="validation-info">
+                  <span><i class="fas fa-check-circle"></i> Validación activa</span>
+                  <span class="ia-badge"><i class="fas fa-robot"></i> IA Ready</span>
+                </div>
+                <button class="btn-generate">
+                  <i class="fas fa-file-export"></i> Generar C204
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-code"></i> TECNOLOGÍAS</span>
+        <h2 class="section-title">Stack <span class="gradient-text">Técnico</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Backend & Automation</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-google"></i>
+              <span>Apps Script</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>SQL/NoSQL</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Herramientas</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-google-drive"></i>
+              <span>Google Cloud</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-figma"></i>
+              <span>Figma</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-paper-plane"></i> CONTACTO</span>
+        <h2 class="section-title">¿Tienes un proyecto en mente?<br><span class="gradient-text">Hablemos</span></h2>
+        <p class="section-desc">Estoy disponible para proyectos freelance, colaboraciones o simplemente para charlar sobre tecnología.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-cards">
+          <a href="mailto:daniel@email.com" class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h4>Email</h4>
+            <p>daniel@email.com</p>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <h4>LinkedIn</h4>
+            <p>Conectemos</p>
+          </a>
+          <a href="https://github.com" target="_blank" class="contact-card">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <h4>GitHub</h4>
+            <p>Ve mi código</p>
+          </a>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="4" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Daniel<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Diseñado y desarrollado con <i class="fas fa-heart neon-pink"></i> y mucho <i class="fas fa-coffee neon-green"></i></p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Daniel. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
