@@ -243,30 +243,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ============================================
 // Contact Form
 // ============================================
+// ============================================
+// Contact Form — Web3Forms
+// ============================================
 const contactForm = document.getElementById('contactForm');
+const formResult = document.getElementById('formResult');
 
-contactForm.addEventListener('submit', function (e) {
+contactForm.addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const btn = this.querySelector('button[type="submit"]');
+  const btn = document.getElementById('submitBtn');
   const originalContent = btn.innerHTML;
 
+  // Loading state
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
   btn.disabled = true;
+  formResult.className = 'form-result';
+  formResult.textContent = '';
 
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje Enviado!';
-    btn.style.background = 'var(--neon-green)';
-    btn.style.color = 'var(--bg-primary)';
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData);
 
-    setTimeout(() => {
-      btn.innerHTML = originalContent;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+    if (res.ok && json.success) {
+      // Success
+      btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje Enviado!';
+      btn.classList.add('btn-success');
+      formResult.className = 'form-result form-result--success';
+      formResult.innerHTML = '<i class="fas fa-check-circle"></i> Gracias, te responderé pronto.';
       contactForm.reset();
-    }, 3000);
-  }, 1500);
+
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.classList.remove('btn-success');
+        btn.disabled = false;
+        formResult.textContent = '';
+      }, 5000);
+    } else {
+      throw new Error(json.message || 'Error al enviar');
+    }
+  } catch (err) {
+    // Error
+    btn.innerHTML = originalContent;
+    btn.disabled = false;
+    formResult.className = 'form-result form-result--error';
+    formResult.innerHTML = '<i class="fas fa-exclamation-circle"></i> No se pudo enviar. Intenta de nuevo.';
+
+    setTimeout(() => { formResult.textContent = ''; }, 5000);
+  }
 });
 
 // ============================================
@@ -318,3 +350,353 @@ window.addEventListener('load', () => {
     document.body.style.opacity = '1';
   });
 });
+
+// ============================================
+// Platzi Certifications Carousel
+// ============================================
+const PLATZI_FALLBACK_COURSES = [
+  {
+    id: 12651,
+    title: "Curso de Claude AI",
+    badge_url: "https://static.platzi.com/media/achievements/6d6c2042-0597-464f-8262-7e4bf0a3c057-2951adb6-cb05-46b5-ba25-ce4b82f7b765.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/12651-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/12651-course/diploma-og/og.jpeg",
+      approved_date: "2026-02-24T03:57:35.367Z"
+    }
+  },
+  {
+    id: 12319,
+    title: "Curso de ChatGPT",
+    badge_url: "https://static.platzi.com/media/achievements/piezas-curso-chatgpt-25-badge-5feef4cd-616a-4234-9282-f88c1bac62a3.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/12319-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/12319-course/diploma-og/og.jpeg",
+      approved_date: "2026-02-12T17:01:27.779Z"
+    }
+  },
+  {
+    id: 12546,
+    title: "Curso de Gemini",
+    badge_url: "https://static.platzi.com/media/achievements/a83591ca-8d6f-4ced-9dcd-7a39a9da4e59-1be3c029-3247-4f9c-b311-2020714cadaf.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/12546-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/12546-course/diploma-og/og.jpeg",
+      approved_date: "2026-01-15T23:38:39.754Z"
+    }
+  },
+  {
+    id: 11944,
+    title: "Curso de Inglés Básico A1: Verbo To Be",
+    badge_url: "https://static.platzi.com/media/achievements/piezas-ingles-basico-a1-verbo-to-be_badge-fa1d266e-db37-47d3-93d8-7f14dce67e17.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/11944-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/11944-course/diploma-og/og.jpeg",
+      approved_date: "2025-09-02T03:22:19.639Z"
+    }
+  },
+  {
+    id: 10629,
+    title: "Curso de Inglés Básico A1 para Principiantes",
+    badge_url: "https://static.platzi.com/media/achievements/badge-c9748016-2a80-4013-be2e-f744163e7fc9.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/10629-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/10629-course/diploma-og/og.jpeg",
+      approved_date: "2025-09-02T03:17:22.610Z"
+    }
+  },
+  {
+    id: 11997,
+    title: "Curso de Fundamentos de Ingeniería de Software",
+    badge_url: "https://static.platzi.com/media/achievements/piezas-fundamentosde-ingenieria-de-software_badge-d9c5b559-837f-44a3-8543-d_bkcvYTp.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/11997-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/11997-course/diploma-og/og.jpeg",
+      approved_date: "2025-08-13T02:53:36.213Z"
+    }
+  },
+  {
+    id: 7965,
+    title: "Curso de Herramientas de Inteligencia Artificial para Equipos de Datos",
+    badge_url: "https://static.platzi.com/media/achievements/nteligencia-artificial-para-equipos-de-datos-badge-f5810628-a56b-468b-a674-982ce16e.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/7965-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/7965-course/diploma-og/og.jpeg",
+      approved_date: "2025-06-03T22:42:30.544Z"
+    }
+  },
+  {
+    id: 5813,
+    title: "Curso Sobre la Historia del Dinero",
+    badge_url: "https://static.platzi.com/media/achievements/piezas-landing-historia-dinero_badge-18926804-def4-41fc-a17a-5d985879e53a.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/5813-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/5813-course/diploma-og/og.jpeg",
+      approved_date: "2025-04-14T02:37:59.128Z"
+    }
+  },
+  {
+    id: 1764,
+    title: "Curso de Introducción al Pensamiento Computacional con Python",
+    badge_url: "https://static.platzi.com/media/achievements/badges-python-7649ea5b-11c5-4b9b-ab45-5b16f1ac778f.png",
+    diploma: {
+      diploma_url: "https://platzi.com/p/DanielVRamirez/curso/1764-course/diploma/detalle/",
+      diploma_image: "https://platzi.com/DanielVRamirez/curso/1764-course/diploma-og/og.jpeg",
+      approved_date: "2020-10-27T18:09:14.130Z"
+    }
+  }
+];
+
+// ── Estado del carrusel ────────────────────────────────────────────────────
+let certCurrentIndex = 0;   // índice dentro del set original
+let certTotalCards   = 0;
+let certResizeTimer  = null;
+let certAutoTimer    = null;
+let certResumeTimer  = null;
+let certIsAnimating  = false;
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function getCertCardsPerView() {
+  if (window.innerWidth <= 768)  return 1;
+  if (window.innerWidth <= 1024) return 2;
+  return 3;
+}
+
+function getCertCardWidth() {
+  const container = document.getElementById('certCarouselContainer');
+  const perView   = getCertCardsPerView();
+  const gap       = 24;
+  return (container.offsetWidth - (perView - 1) * gap) / perView;
+}
+
+function formatCertDate(isoString) {
+  const date = new Date(isoString);
+  return date.toLocaleDateString('es-ES', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function createCertCard(course) {
+  const card = document.createElement('div');
+  card.className = 'cert-card';
+
+  const dateStr   = course.diploma?.approved_date ? formatCertDate(course.diploma.approved_date) : '';
+  const diplomaUrl = course.diploma?.diploma_url  || '#';
+  const diplomaImg = course.diploma?.diploma_image || '';
+
+  card.innerHTML = `
+    <div class="cert-badge-wrap">
+      <img class="cert-badge-img" src="${course.badge_url}" alt="${course.title}" loading="lazy">
+    </div>
+    <div class="cert-card-content">
+      <h4 class="cert-card-title">${course.title}</h4>
+      <p class="cert-card-date"><i class="fas fa-calendar-check"></i> ${dateStr}</p>
+    </div>
+    <div class="cert-diploma-preview">
+      <img src="${diplomaImg}" alt="Diploma de ${course.title}" loading="lazy">
+      <div class="cert-diploma-overlay"><i class="fas fa-award"></i></div>
+    </div>
+    <a href="${diplomaUrl}" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+      <i class="fas fa-external-link-alt"></i> Ver Diploma
+    </a>
+  `;
+
+  const previewEl = card.querySelector('.cert-diploma-preview');
+  previewEl.querySelector('img').addEventListener('error', () => {
+    previewEl.style.display = 'none';
+  });
+
+  return card;
+}
+
+// ── Dots ───────────────────────────────────────────────────────────────────
+function buildCarouselDots() {
+  const dotsEl = document.getElementById('carouselDots');
+  if (!dotsEl) return;
+  dotsEl.innerHTML = '';
+  for (let i = 0; i < certTotalCards; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', `Certificación ${i + 1}`);
+    dot.addEventListener('click', () => {
+      pauseAutoPlay();
+      goTo(i, true);
+      resumeAutoPlaySoon();
+    });
+    dotsEl.appendChild(dot);
+  }
+}
+
+function updateDots(activeIndex) {
+  document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === activeIndex);
+  });
+}
+
+// ── Traducción del track ───────────────────────────────────────────────────
+function applyTrackTranslate(index, animate) {
+  const track   = document.getElementById('certTrack');
+  const w       = getCertCardWidth();
+  const gap     = 24;
+  const offset  = index * (w + gap);
+
+  track.style.transition = animate
+    ? 'transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+    : 'none';
+  track.style.transform  = `translateX(-${offset}px)`;
+}
+
+function setAllCardWidths() {
+  const track = document.getElementById('certTrack');
+  const w     = getCertCardWidth();
+  track.querySelectorAll('.cert-card').forEach(card => {
+    card.style.width    = `${w}px`;
+    card.style.minWidth = `${w}px`;
+  });
+}
+
+// ── Navegación ─────────────────────────────────────────────────────────────
+function goTo(index, animate) {
+  certCurrentIndex = index;
+  applyTrackTranslate(certCurrentIndex, animate);
+  updateDots(certCurrentIndex % certTotalCards);
+}
+
+function advanceOne() {
+  if (certIsAnimating) return;
+  const nextIdx = certCurrentIndex + 1;
+
+  if (nextIdx >= certTotalCards) {
+    // Animar hacia el clon del primer set
+    certIsAnimating = true;
+    applyTrackTranslate(certTotalCards, true);
+
+    // Tras la animación, saltar silenciosamente al índice 0 real
+    setTimeout(() => {
+      certCurrentIndex = 0;
+      applyTrackTranslate(0, false);
+      updateDots(0);
+      certIsAnimating = false;
+    }, 570);
+  } else {
+    goTo(nextIdx, true);
+  }
+}
+
+function retreatOne() {
+  if (certIsAnimating) return;
+
+  if (certCurrentIndex <= 0) {
+    // Saltar silenciosamente al clon del final y luego animar hacia atrás
+    certIsAnimating = true;
+    applyTrackTranslate(certTotalCards, false); // posición del clon final (= inicio)
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      certCurrentIndex = certTotalCards - 1;
+      applyTrackTranslate(certCurrentIndex, true);
+      updateDots(certCurrentIndex);
+      setTimeout(() => { certIsAnimating = false; }, 570);
+    }));
+  } else {
+    goTo(certCurrentIndex - 1, true);
+  }
+}
+
+// ── Autoplay ───────────────────────────────────────────────────────────────
+function startAutoPlay() {
+  clearInterval(certAutoTimer);
+  certAutoTimer = setInterval(advanceOne, 3200);
+}
+
+function pauseAutoPlay() {
+  clearInterval(certAutoTimer);
+  clearTimeout(certResumeTimer);
+}
+
+function resumeAutoPlaySoon() {
+  clearTimeout(certResumeTimer);
+  certResumeTimer = setTimeout(startAutoPlay, 4000);
+}
+
+// ── Carga principal ────────────────────────────────────────────────────────
+async function loadCertifications() {
+  const track = document.getElementById('certTrack');
+  if (!track) return;
+
+  let courses    = PLATZI_FALLBACK_COURSES;
+  let totalCount = 104;
+
+  try {
+    const res = await fetch(
+      'https://api.platzi.com/students/v1/diplomas/DanielVRamirez/?page=1&page_size=10',
+      { mode: 'cors' }
+    );
+    if (res.ok) {
+      const json = await res.json();
+      if (json.data && Array.isArray(json.data.courses) && json.data.courses.length > 0) {
+        courses    = json.data.courses;
+        totalCount = json.data.approved_courses || totalCount;
+      }
+    }
+  } catch (_) { /* usa fallback */ }
+
+  const countEl = document.getElementById('platziCount');
+  if (countEl) countEl.textContent = totalCount;
+
+  certTotalCards   = courses.length;
+  certCurrentIndex = 0;
+
+  // Renderizar originales + clones para el loop infinito
+  track.innerHTML = '';
+  courses.forEach(course => track.appendChild(createCertCard(course)));
+  const originals = [...track.querySelectorAll('.cert-card')];
+  originals.forEach(c => track.appendChild(c.cloneNode(true)));
+
+  buildCarouselDots();
+  setAllCardWidths();
+  goTo(0, false);
+  startAutoPlay();
+
+  // Botones
+  document.getElementById('certPrev').addEventListener('click', () => {
+    pauseAutoPlay();
+    retreatOne();
+    resumeAutoPlaySoon();
+  });
+  document.getElementById('certNext').addEventListener('click', () => {
+    pauseAutoPlay();
+    advanceOne();
+    resumeAutoPlaySoon();
+  });
+
+  // Siempre habilitados (loop infinito)
+  document.getElementById('certPrev').disabled = false;
+  document.getElementById('certNext').disabled = false;
+
+  // Swipe táctil
+  const container = document.getElementById('certCarouselContainer');
+  let touchStartX = 0;
+  container.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  container.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 48) {
+      pauseAutoPlay();
+      if (diff > 0) advanceOne(); else retreatOne();
+      resumeAutoPlaySoon();
+    }
+  }, { passive: true });
+
+  // Pausar al hover
+  container.addEventListener('mouseenter', pauseAutoPlay);
+  container.addEventListener('mouseleave', startAutoPlay);
+
+  // Recalcular en resize
+  window.addEventListener('resize', () => {
+    clearTimeout(certResizeTimer);
+    certResizeTimer = setTimeout(() => {
+      setAllCardWidths();
+      applyTrackTranslate(certCurrentIndex, false);
+    }, 150);
+  });
+}
+
+loadCertifications();

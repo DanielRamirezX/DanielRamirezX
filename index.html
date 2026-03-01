@@ -21,8 +21,10 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="active">Inicio</a></li>
         <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#experience">Experiencia</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Platzi</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -165,6 +167,105 @@
     </div>
   </section>
 
+  <!-- Experience & Education Section -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-briefcase"></i> TRAYECTORIA</span>
+        <h2 class="section-title">Experiencia & <span class="gradient-text">Formación</span></h2>
+      </div>
+
+      <div class="exp-grid">
+
+        <!-- Experiencia Laboral -->
+        <div class="exp-column">
+          <h3 class="exp-column-title"><i class="fas fa-building"></i> Experiencia Laboral</h3>
+
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-marker current"></div>
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h4 class="timeline-role">Software Expert</h4>
+                    <span class="timeline-company">
+                      <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.bbva.mx&size=64" alt="BBVA" class="company-logo" />
+                      BBVA México
+                    </span>
+                  </div>
+                  <span class="timeline-badge current">Actual</span>
+                </div>
+                <span class="timeline-period"><i class="fas fa-calendar-alt"></i> Ago 2024 — Presente</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h4 class="timeline-role">Software Expert Business Execution</h4>
+                    <span class="timeline-company">
+                      <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.bbva.mx&size=64" alt="BBVA" class="company-logo" />
+                      BBVA Technology América
+                    </span>
+                  </div>
+                </div>
+                <span class="timeline-period"><i class="fas fa-calendar-alt"></i> Ago 2022 — Sep 2024</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h4 class="timeline-role">Software Engineer</h4>
+                    <span class="timeline-company">
+                      <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.bbva.mx&size=64" alt="BBVA" class="company-logo" />
+                      BBVA México
+                    </span>
+                  </div>
+                </div>
+                <span class="timeline-period"><i class="fas fa-calendar-alt"></i> Nov 2020 — Ago 2022</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Formación Académica -->
+        <div class="exp-column">
+          <h3 class="exp-column-title"><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
+
+          <div class="edu-cards">
+
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="edu-info">
+                <h4 class="edu-degree">Maestría en Seguridad de Tecnologías de Información</h4>
+                <span class="edu-school">Universidad Tecnológica de México</span>
+                <span class="edu-type">Posgrado</span>
+              </div>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="edu-info">
+                <h4 class="edu-degree">Ingeniería en Sistemas Computacionales</h4>
+                <span class="edu-school">Universidad Tecnológica de México</span>
+                <span class="edu-type">Licenciatura</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section class="section projects" id="projects">
     <div class="container">
@@ -236,7 +337,7 @@
                 </div>
                 <div class="project-details">
                   <span><i class="fas fa-calendar"></i> Inicio: 15 Ene 2026</span>
-                  <span><i class="fas fa-user"></i> Tech Lead: Joe Valentin</span>
+                  <span><i class="fas fa-user"></i> Tech Lead: Lou Velten</span>
                 </div>
               </div>
               <div class="devhub-columns">
@@ -387,9 +488,8 @@
           </div>
           <h3 class="project-title">Automatización DPR & Estructura</h3>
           <p class="project-desc">
-            El sistema extrae la información que el desarrollador ya ingresó en el DevHub 
-            y solicita el código CRQ automáticamente. Genera carpetas y archivos de documentación 
-            en segundos.
+            El sistema extrae la información que el desarrollador ya ingresó en el DevHub. 
+            Genera carpetas y archivos de documentación en segundos.
           </p>
           <ul class="project-features">
             <li>
@@ -515,7 +615,7 @@
             <li>
               <i class="fas fa-check-circle"></i>
               <div>
-                <strong>Genera C204 y Docs</strong>
+                <strong>Genera Documentacion Completa</strong>
                 <span>Exporta automáticamente los formatos requeridos</span>
               </div>
             </li>
@@ -604,8 +704,10 @@
         <h2 class="section-title">Stack <span class="gradient-text">Técnico</span></h2>
       </div>
       <div class="skills-grid">
+
+        <!-- Frontend & Web -->
         <div class="skill-category">
-          <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <h3><i class="fas fa-laptop-code"></i> Frontend & Web</h3>
           <div class="skill-items">
             <div class="skill-item">
               <i class="fab fa-html5"></i>
@@ -615,22 +717,51 @@
             <div class="skill-item">
               <i class="fab fa-css3-alt"></i>
               <span>CSS3</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
             </div>
             <div class="skill-item">
               <i class="fab fa-js"></i>
               <span>JavaScript</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
             </div>
             <div class="skill-item">
               <i class="fab fa-react"></i>
               <span>React</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & Lenguajes -->
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Backend & Lenguajes</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fab fa-java"></i>
+              <span>Java / Spring Boot</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code"></i>
+              <span>Go (Golang)</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>SQL / NoSQL</span>
               <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
             </div>
           </div>
         </div>
+
+        <!-- Automatización & DevOps -->
         <div class="skill-category">
-          <h3><i class="fas fa-server"></i> Backend & Automation</h3>
+          <h3><i class="fas fa-bolt"></i> Automatización & DevOps</h3>
           <div class="skill-items">
             <div class="skill-item">
               <i class="fab fa-google"></i>
@@ -638,48 +769,179 @@
               <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
             </div>
             <div class="skill-item">
-              <i class="fab fa-node-js"></i>
-              <span>Node.js</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-python"></i>
-              <span>Python</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-database"></i>
-              <span>SQL/NoSQL</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-tools"></i> Herramientas</h3>
-          <div class="skill-items">
-            <div class="skill-item">
               <i class="fab fa-git-alt"></i>
-              <span>Git</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-google-drive"></i>
-              <span>Google Cloud</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-figma"></i>
-              <span>Figma</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+              <span>Git / GitHub</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
             </div>
             <div class="skill-item">
               <i class="fab fa-docker"></i>
               <span>Docker</span>
-              <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+              <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-aws"></i>
+              <span>AWS</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="62"></div></div>
             </div>
           </div>
         </div>
+
+        <!-- Inteligencia Artificial -->
+        <div class="skill-category">
+          <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="fas fa-robot"></i>
+              <span>Claude AI & Code</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-github"></i>
+              <span>GitHub Copilot</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-comment-dots"></i>
+              <span>ChatGPT / Gemini</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-microchip"></i>
+              <span>AI para Datos</span>
+              <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Duolingo English Level -->
+      <div class="duolingo-widget">
+        <div class="duolingo-widget-header">
+          <div class="duo-brand">
+            <svg class="duo-owl-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="32" fill="#58cc02"/>
+              <ellipse cx="32" cy="38" rx="14" ry="10" fill="#fff"/>
+              <circle cx="24" cy="26" r="7" fill="#fff"/>
+              <circle cx="40" cy="26" r="7" fill="#fff"/>
+              <circle cx="24" cy="26" r="4.5" fill="#1cb0f6"/>
+              <circle cx="40" cy="26" r="4.5" fill="#1cb0f6"/>
+              <circle cx="24" cy="26" r="2" fill="#000"/>
+              <circle cx="40" cy="26" r="2" fill="#000"/>
+              <ellipse cx="32" cy="37" rx="5" ry="3" fill="#ff9600"/>
+            </svg>
+            <div>
+              <span class="duo-label">Duolingo</span>
+              <span class="duo-sublabel">Inglés · <a href="https://www.duolingo.com/profile/DanielVRamirez" target="_blank" rel="noopener">@DanielVRamirez</a></span>
+            </div>
+          </div>
+          <span class="duo-league-badge"><i class="fas fa-gem"></i> Liga Diamante</span>
+        </div>
+
+        <div class="duolingo-stats">
+          <div class="duo-stat">
+            <span class="duo-stat-icon">🔥</span>
+            <span class="duo-stat-value">62</span>
+            <span class="duo-stat-label">días de racha</span>
+          </div>
+          <div class="duo-stat">
+            <span class="duo-stat-icon">⚡</span>
+            <span class="duo-stat-value">13,271</span>
+            <span class="duo-stat-label">XP en inglés</span>
+          </div>
+          <div class="duo-stat">
+            <span class="duo-stat-icon">👑</span>
+            <span class="duo-stat-value">252</span>
+            <span class="duo-stat-label">coronas</span>
+          </div>
+          <div class="duo-stat">
+            <span class="duo-stat-icon">📅</span>
+            <span class="duo-stat-value">2016</span>
+            <span class="duo-stat-label">desde</span>
+          </div>
+        </div>
+
+        <div class="duo-cefr-row">
+          <div class="duo-cefr-badge">
+            <span class="duo-cefr-level">B1</span>
+            <span class="duo-cefr-label">Nivel CEFR actual</span>
+          </div>
+          <div class="duo-score-bar-wrap">
+            <div class="duo-score-bar-labels">
+              <span>INTRO</span><span>A1</span><span>A2</span><span>B1</span><span>B2</span><span>C1</span>
+            </div>
+            <div class="duo-score-bar">
+              <div class="duo-score-fill" style="width: calc(67 / 130 * 100%)"></div>
+              <div class="duo-score-marker" style="left: calc(67 / 130 * 100%)">
+                <span class="duo-score-tooltip">67 / 130</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="duo-progress-section">
+          <div class="duo-progress-label">
+            <span>Ruta de aprendizaje</span>
+            <span class="duo-progress-pct">4 de 8 secciones completadas</span>
+          </div>
+          <div class="duo-sections-track">
+            <div class="duo-section-node done" title="Intro — Completada"><span class="duo-node-label">INT</span></div>
+            <div class="duo-section-connector done"></div>
+            <div class="duo-section-node done" title="A1 — Completada"><span class="duo-node-label">A1</span></div>
+            <div class="duo-section-connector done"></div>
+            <div class="duo-section-node done" title="A1 — Completada"><span class="duo-node-label">A1</span></div>
+            <div class="duo-section-connector done"></div>
+            <div class="duo-section-node done" title="A2 — Completada"><span class="duo-node-label">A2</span></div>
+            <div class="duo-section-connector current"></div>
+            <div class="duo-section-node current" title="B1 — En progreso (72/250)"><span class="duo-node-label">B1</span></div>
+            <div class="duo-section-connector"></div>
+            <div class="duo-section-node" title="B1"><span class="duo-node-label">B1</span></div>
+            <div class="duo-section-connector"></div>
+            <div class="duo-section-node" title="B2"><span class="duo-node-label">B2</span></div>
+            <div class="duo-section-connector"></div>
+            <div class="duo-section-node" title="B2"><span class="duo-node-label">B2</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section certifications" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-graduation-cap"></i> APRENDIZAJE</span>
+        <h2 class="section-title">Certificaciones en <span class="gradient-text">Platzi</span></h2>
+        <div class="platzi-summary">
+          <div class="platzi-count-badge">
+            <i class="fas fa-award platzi-icon"></i>
+            <span class="platzi-count-number" id="platziCount">104</span>
+            <span class="platzi-count-label">certificaciones</span>
+          </div>
+          <a href="https://platzi.com/p/DanielVRamirez/" target="_blank" rel="noopener noreferrer" class="platzi-profile-btn">
+            <i class="fas fa-external-link-alt"></i> Ver perfil en Platzi
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-carousel-wrapper">
+        <button class="carousel-nav-btn carousel-prev" id="certPrev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="cert-carousel-container" id="certCarouselContainer">
+          <div class="cert-track" id="certTrack">
+            <div class="cert-loading">
+              <i class="fas fa-spinner fa-spin"></i>
+              <span>Cargando certificaciones...</span>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-nav-btn carousel-next" id="certNext" aria-label="Siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </section>
 
@@ -693,17 +955,12 @@
       </div>
       <div class="contact-grid">
         <div class="contact-cards">
-          <a href="mailto:daniel@email.com" class="contact-card">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <h4>Email</h4>
-            <p>daniel@email.com</p>
-          </a>
-          <a href="https://linkedin.com" target="_blank" class="contact-card">
+          <a href="https://www.linkedin.com/in/daniel-vaca-ramirez-797438194" target="_blank" rel="noopener" class="contact-card">
             <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
             <h4>LinkedIn</h4>
             <p>Conectemos</p>
           </a>
-          <a href="https://github.com" target="_blank" class="contact-card">
+          <a href="https://github.com/DanielRamirezX" target="_blank" rel="noopener" class="contact-card">
             <div class="contact-icon"><i class="fab fa-github"></i></div>
             <h4>GitHub</h4>
             <p>Ve mi código</p>
@@ -711,6 +968,12 @@
         </div>
         <div class="contact-form-wrapper">
           <form class="contact-form" id="contactForm">
+            <!-- Web3Forms config -->
+            <input type="hidden" name="access_key" value="ef732ba7-3610-43d7-ba70-96a24dcba125">
+            <input type="hidden" name="subject" value="📬 Nuevo mensaje desde tu portafolio">
+            <input type="hidden" name="from_name" value="Portafolio Daniel">
+            <input type="checkbox" name="botcheck" style="display:none">
+
             <div class="form-group">
               <label for="name">Nombre</label>
               <input type="text" id="name" name="name" placeholder="Tu nombre" required>
@@ -723,9 +986,10 @@
               <label for="message">Mensaje</label>
               <textarea id="message" name="message" rows="4" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
               <i class="fas fa-paper-plane"></i> Enviar Mensaje
             </button>
+            <div class="form-result" id="formResult" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -741,10 +1005,9 @@
         </div>
         <p class="footer-text">Diseñado y desarrollado con <i class="fas fa-heart neon-pink"></i> y mucho <i class="fas fa-coffee neon-green"></i></p>
         <div class="footer-social">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/DanielRamirezX" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/daniel-vaca-ramirez-797438194" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://platzi.com/p/DanielVRamirez/" target="_blank" rel="noopener" aria-label="Platzi"><i class="fas fa-graduation-cap"></i></a>
         </div>
         <p class="footer-copy">&copy; 2026 Daniel. Todos los derechos reservados.</p>
       </div>
