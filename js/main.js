@@ -700,3 +700,111 @@ async function loadCertifications() {
 }
 
 loadCertifications();
+
+// ============================================
+// Hero Photo — Fallback si no existe la imagen
+// ============================================
+const heroPhoto = document.querySelector('.hero-photo');
+if (heroPhoto) {
+  heroPhoto.addEventListener('error', () => {
+    const heroAvatar = document.querySelector('.hero-avatar');
+    if (heroAvatar) heroAvatar.style.display = 'none';
+  });
+}
+
+// Igual para la foto del CV
+const cvPhotoImg = document.querySelector('.cv-photo-img');
+if (cvPhotoImg) {
+  cvPhotoImg.addEventListener('error', () => {
+    const ring = document.querySelector('#cv-printable .cv-photo-ring');
+    if (ring) {
+      ring.innerHTML = '<div style="width:100%;height:100%;border-radius:50%;background:#16162a;display:flex;align-items:center;justify-content:center;"><i class="fas fa-user" style="font-size:2.5rem;color:#00ff88;"></i></div>';
+    }
+  });
+}
+
+// ============================================
+// Descargar CV como PDF
+// ============================================
+
+const downloadCvBtn = document.getElementById('downloadCvBtn');
+if (downloadCvBtn) {
+  downloadCvBtn.addEventListener('click', async () => {
+    const btn = downloadCvBtn;
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando...';
+    btn.disabled = true;
+
+    // Overlay de carga
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:#0a0a0f;z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;';
+    overlay.innerHTML = '<div style="width:52px;height:52px;border:3px solid rgba(0,255,136,0.2);border-top-color:#00ff88;border-radius:50%;animation:cv-spin 0.8s linear infinite;"></div><p style="color:#00ff88;font-family:Inter,sans-serif;font-size:0.9rem;margin:0;">Generando PDF...</p><style>@keyframes cv-spin{to{transform:rotate(360deg)}}</style>';
+    document.body.appendChild(overlay);
+
+    const prevScroll = window.scrollY;
+    window.scrollTo(0, 0);
+
+    // 1. Retirar partículas
+    const particlesBg      = document.getElementById('particles-bg');
+    const particlesParent  = particlesBg.parentNode;
+    const particlesNextSib = particlesBg.nextSibling;
+    particlesParent.removeChild(particlesBg);
+
+    // 2. Ocultar absolutamente TODO excepto el CV y el overlay
+    const mainContent = [];
+    [...document.body.children].forEach(el => {
+      if (el.id !== 'cv-printable' && el !== overlay && el.tagName !== 'SCRIPT') {
+        mainContent.push({ el, prev: el.style.display });
+        el.style.display = 'none';
+      }
+    });
+
+    // 3. Mostrar el CV en su contenedor original
+    const cvEl = document.getElementById('cv-printable');
+    cvEl.style.display = 'block';
+
+    // Esperar
+    await new Promise(res => setTimeout(res, 400));
+
+    const opt = {
+      margin:      0,
+      filename:    'CV-Daniel-Vaca-Ramirez.pdf',
+      image:       { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale:           2,
+        useCORS:         false,
+        allowTaint:      false,
+        backgroundColor: '#0a0a0f',
+        logging:         false,
+        width:           794,
+        height:          1123,
+        windowWidth:     794,
+        windowHeight:    1123,
+        x:               0,
+        y:               0,
+        scrollX:         0,
+        scrollY:         0
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    try {
+      await html2pdf().set(opt).from(cvEl).save();
+    } finally {
+      cvEl.style.display = 'none';
+      
+      // Restaurar todo
+      mainContent.forEach(({ el, prev }) => el.style.display = prev);
+      if (particlesNextSib) {
+        particlesParent.insertBefore(particlesBg, particlesNextSib);
+      } else {
+        particlesParent.appendChild(particlesBg);
+      }
+      
+      overlay.remove();
+      window.scrollTo(0, prevScroll);
+      btn.innerHTML = originalContent;
+      btn.disabled  = false;
+    }
+  });
+}
